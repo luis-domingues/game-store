@@ -1,13 +1,56 @@
 package com.gamestore.game;
 
-public class Game {
-    //atributos da classe
-    public String title;
-    public double price;
-    public double discount;
+import com.gamestore.developer.Developer;
 
-    //comportamento da classe `Game.java`
-    public double getDiscountedPrice () {
-        return price - discount;
+public class Game {
+    private String title;
+    private double price;
+    private double discount;
+    private Developer developer;
+
+    public Game(String title, double price, double discount, Developer developer) {
+        super();
+        this.title = title;
+        this.price = price;
+        this.discount = discount;
+        this.developer = developer;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        if (price <= 0)
+            return;
+        this.price = price;
+    }
+
+    public double getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(double discount) {
+        if (discount <= 0)
+            return;
+        if (discount > price)
+            return;
+        this.discount = discount;
+    }
+
+    public Developer getDeveloper() {
+        return developer;
+    }
+
+    public void setDeveloper(Developer developer) {
+        this.developer = developer;
     }
 }
