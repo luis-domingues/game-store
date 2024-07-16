@@ -1,15 +1,23 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import com.gamestore.game.Game;
+
 public class Main {
     public static void main (String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf ("Hello and welcome!");
+        Game cod = new Game();
+        cod.title = "Call of Duty";
+        cod.price = 66.5;
+        cod.discount = 12.5;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println ("i = " + i);
-        }
+        System.out.println ("The game " + cod.title + " is stored in the position " + cod);
+
+        Game ds2 = new Game();
+        ds2.title = "Dark Souls II";
+        ds2.price = 55.2;
+        ds2.discount = 6.25;
+
+        System.out.println ("The game " + ds2.title + " is stored in the position " + ds2);
+        System.out.println("______________________________________________________________");
+
+        System.out.println ("\nGame Price: " + cod.title + " is US$" + cod.price + " but, fortunately, today we have US$" + cod.discount +" discount.\nFinal Game Price: US$" + cod.getDiscountedPrice());
+        System.out.println ("\nGame Price: " + ds2.title + " is US$" + ds2.price + " but, fortunately, today we have US$" + ds2.discount +" discount.\nFinal Game Price: US$" + ds2.getDiscountedPrice());
     }
 }
