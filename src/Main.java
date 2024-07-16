@@ -18,15 +18,15 @@ public class Main {
             if (userOption == 0)
                 break;
             if (userOption == 1) {
-                Developer dev = new Developer();
                 System.out.println ("Developer name:");
-                dev.nameDeveloper = in.next();
+                String name = in.next();
+                Developer dev = new Developer(name);
                 developers[numDevelopers] = dev;
                 numDevelopers++;
             }
             if (userOption == 2) {
                 for (int i = 0; i < numDevelopers; i++) {
-                    System.out.println ("\nDeveloper ID[" + i + "]: " + developers[i].nameDeveloper);
+                    System.out.println ("\nDeveloper ID[" + i + "]: " + developers[i].getNameDeveloper());
                 }
             }
         }
