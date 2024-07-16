@@ -1,23 +1,44 @@
+import com.gamestore.developer.Developer;
 import com.gamestore.game.Game;
+import java.util.Scanner;
 
 public class Main {
+    static Developer[] developers = new Developer[100];
+    static int numDevelopers = 0;
+
     public static void main (String[] args) {
-        Game cod = new Game();
-        cod.title = "Call of Duty";
-        cod.price = 66.5;
-        cod.discount = 12.5;
+        Scanner in = new Scanner(System.in);
+        in.useDelimiter("\r?\n");
 
-        System.out.println ("The game " + cod.title + " is stored in the position " + cod);
+        System.out.println ("Welcome!");
+        while(true) {
+            printMenu();
+            int userOption = in.nextInt();
 
-        Game ds2 = new Game();
-        ds2.title = "Dark Souls II";
-        ds2.price = 55.2;
-        ds2.discount = 6.25;
+            if (userOption == 0)
+                break;
+            if (userOption == 1) {
+                Developer dev = new Developer();
+                System.out.println ("Developer name:");
+                dev.nameDeveloper = in.next();
+                developers[numDevelopers] = dev;
+                numDevelopers++;
+            }
+            if (userOption == 2) {
+                for (int i = 0; i < numDevelopers; i++) {
+                    System.out.println ("\nDeveloper ID[" + i + "]: " + developers[i].nameDeveloper);
+                }
+            }
+        }
 
-        System.out.println ("The game " + ds2.title + " is stored in the position " + ds2);
-        System.out.println("______________________________________________________________");
+        System.out.println ("Ending section");
+    }
 
-        System.out.println ("\nGame Price: " + cod.title + " is US$" + cod.price + " but, fortunately, today we have US$" + cod.discount +" discount.\nFinal Game Price: US$" + cod.getDiscountedPrice());
-        System.out.println ("\nGame Price: " + ds2.title + " is US$" + ds2.price + " but, fortunately, today we have US$" + ds2.discount +" discount.\nFinal Game Price: US$" + ds2.getDiscountedPrice());
+    static void printMenu() {
+        System.out.println ("\n_________________________________________________________________________________________\n");
+        System.out.println ("[0].   Exit.");
+        System.out.println("[1].    Developer, register by selecting here.");
+        System.out.println("[2].    Registered developers.");
+        System.out.println ("Search...");
     }
 }
