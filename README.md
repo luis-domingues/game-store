@@ -14,7 +14,7 @@ If you want to run the project on your computer, follow the steps below:
 
 1. Make sure you have Java installed
 2. Clone project: `https://github.com/luis-domingues/game-store`
-3. Execute a classe Main.java
+3. Execute the Main.java class
 
 ## Contribute
 If you would like to contribute to the code in any way. Feel free to create a feature/branch.
