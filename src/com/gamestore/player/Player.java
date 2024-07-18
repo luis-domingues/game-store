@@ -1,12 +1,14 @@
 package com.gamestore.player;
+
 import com.gamestore.game.Game;
+import java.util.ArrayList;
 
 public class Player {
     private String username;
     private String email;
-    private Game[] games;
+    private ArrayList<Game> games;
 
-    public Player (String username, String email, Game[] games) {
+    public Player (String username, String email, ArrayList<Game> games) {
         super();
         this.username = username;
         this.email = email;
@@ -29,11 +31,11 @@ public class Player {
         this.email = email;
     }
 
-    public Game[] getGames () {
+    public ArrayList<Game> getGames () {
         return games;
     }
 
-    public void setGames (Game[] games) {
+    public void setGames (ArrayList<Game> games) {
         this.games = games;
     }
 }
