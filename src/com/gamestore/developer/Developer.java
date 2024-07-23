@@ -1,23 +1,23 @@
 package com.gamestore.developer;
 
-public class Developer {
-    private String nameDeveloper;
+import com.gamestore.game.Game;
+import com.gamestore.user.User;
 
-    public Developer() {
-        this.nameDeveloper = "NoName";
+import java.util.ArrayList;
+
+public class Developer extends User {
+    private String adders;
+
+    public Developer (String username, String email, String adders) {
+        super (username, email);
+        this.adders = adders;
     }
 
-    public Developer(String nameDeveloper) {
-        this.nameDeveloper = nameDeveloper;
+    public String getAdders () {
+        return adders;
     }
 
-    public void setNameDeveloper(String nameDeveloper) {
-        if (nameDeveloper.isBlank())
-            return;
-        this.nameDeveloper = nameDeveloper;
-    }
-
-    public String getNameDeveloper() {
-        return nameDeveloper;
+    public void setAdders (String adders) {
+        this.adders = adders;
     }
 }
