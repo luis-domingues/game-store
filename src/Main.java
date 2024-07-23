@@ -58,7 +58,7 @@ public class Main {
     }
 
     static void printMenu() {
-        System.out.println ("\n_________________________________________________________________________________________\n");
+        System.out.println ("\n___________________________________________________________________________\n");
         System.out.println ("[0].    Exit.");
         System.out.println ("[1].    Press here to register a developer.");
         System.out.println ("[2].    Press here to list listed developers.");
