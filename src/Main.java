@@ -1,5 +1,4 @@
 import com.gamestore.developer.Developer;
-import com.gamestore.game.Game;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -21,12 +20,16 @@ public class Main {
             if (userOption == 1) {
                 System.out.println ("Developer name:");
                 String name = in.next();
-                Developer dev = new Developer(name);
+                System.out.println ("Developer email:");
+                String email = in.next();
+                System.out.println ("Developer adders:");
+                String adders = in.next();
+                Developer dev = new Developer(name, email, adders);
                 developers.add(dev);
             }
             if (userOption == 2) {
                 for (int i = 0; i < developers.size(); i++) {
-                    System.out.println ("\nDeveloper ID[" + i + "]: " + developers.get(i).getNameDeveloper());
+                    System.out.println ("\nDeveloper ID[" + i + "]: " + developers.get(i).getUsername ());
                 }
             }
             if (userOption == 3) {
@@ -44,10 +47,16 @@ public class Main {
                 int i = in.nextInt();
                 if (i < developers.size()) {
                     Developer dev = developers.get(i);
-                    System.out.println("Enter new developer name?");
+                    System.out.println("Enter new developer name");
                     String name = in.next();
-                    dev.setNameDeveloper(name);
-                    System.out.println("Success! Developer name changed to " + dev.getNameDeveloper());
+                    dev.setUsername (name);
+                    System.out.println("Enter new developer email");
+                    String email = in.next();
+                    dev.setEmail (email);
+                    System.out.println("Enter new developer adders");
+                    String adders = in.next();
+                    dev.setUsername (adders);
+                    System.out.println("Success! Developer name changed to " + dev.getUsername ());
                 } else {
                     System.out.println("Invalid index! Type it again.");
                 }
