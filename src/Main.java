@@ -1,10 +1,16 @@
 import com.gamestore.developer.Developer;
+import com.gamestore.player.Player;
+import com.gamestore.user.User;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
-    static ArrayList<Developer> developers = new ArrayList<Developer>();
+
+    static ArrayList<Developer> developers = new ArrayList<> ();
+
+    static ArrayList<Player> players = new ArrayList<> ();
+    static ArrayList<User> users = new ArrayList<> ();
 
     public static void main (String[] args) {
         Scanner in = new Scanner(System.in);
@@ -26,6 +32,7 @@ public class Main {
                 String adders = in.next();
                 Developer dev = new Developer(name, email, adders);
                 developers.add(dev);
+                users.add(dev);
             }
             if (userOption == 2) {
                 for (int i = 0; i < developers.size(); i++) {
@@ -61,6 +68,24 @@ public class Main {
                     System.out.println("Invalid index! Type it again.");
                 }
             }
+            if (userOption == 5) {
+                System.out.println ("Player name:");
+                String name = in.next();
+                System.out.println ("Player email:");
+                String email = in.next();
+                Player player = new Player(name, email);
+                players.add(player);
+                users.add(player);
+            }
+            if (userOption == 6) {
+                for (int iUser = 0; iUser < users.size(); iUser++) {
+                    User user = users.get(iUser);
+                    if (user instanceof Player)
+                        System.out.println ("\nUser ID[" + iUser + "]: " + user.getUsername() + " is a Player.");
+                    if (user instanceof Developer)
+                        System.out.println ("\nUser ID[" + iUser + "]: " + user.getUsername() + " is a Developer.");
+                }
+            }
         }
 
         System.out.println ("Ending section");
@@ -73,6 +98,8 @@ public class Main {
         System.out.println ("[2].    Press here to list listed developers.");
         System.out.println ("[3].    Press here to remove a listed developer.");
         System.out.println ("[4].    Press here to change a listed developer.");
+        System.out.println ("[5].    Press here to register a player.");
+        System.out.println ("[6].    Press here to list listed users.");
         System.out.println ("Search...");
     }
 }
