@@ -5,7 +5,7 @@ import com.gamestore.game.Game;
 import java.util.ArrayList;
 
 public class User {
-    private String username;
+    protected String username;
     private String email;
     private ArrayList<Game> games;
 
