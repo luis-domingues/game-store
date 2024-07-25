@@ -1,3 +1,4 @@
+import com.gamestore.admin.Admin;
 import com.gamestore.developer.Developer;
 import com.gamestore.player.Player;
 import com.gamestore.user.User;
@@ -11,6 +12,7 @@ public class Main {
 
     static ArrayList<Player> players = new ArrayList<> ();
     static ArrayList<User> users = new ArrayList<> ();
+    static ArrayList<Admin> admins = new ArrayList<> ();
 
     public static void main (String[] args) {
         Scanner in = new Scanner(System.in);
@@ -84,7 +86,20 @@ public class Main {
                         System.out.println ("\nUser ID[" + iUser + "]: " + user.getUsername() + " is a Player.");
                     if (user instanceof Developer)
                         System.out.println ("\nUser ID[" + iUser + "]: " + user.getUsername() + " is a Developer.");
+                    if (user instanceof Admin)
+                        System.out.println ("\nUser ID[" + iUser + "]: " + user.getUsername() + " is a Administrator.");
                 }
+            }
+            if (userOption == 7) {
+                System.out.println ("Admin name:");
+                String name = in.next();
+                System.out.println ("Admin email:");
+                String email = in.next();
+                System.out.println ("Admin password:");
+                String password = in.next();
+                Admin admin = new Admin(name, email, password);
+                admins.add(admin);
+                users.add(admin);
             }
         }
 
@@ -100,6 +115,7 @@ public class Main {
         System.out.println ("[4].    Press here to change a listed developer.");
         System.out.println ("[5].    Press here to register a player.");
         System.out.println ("[6].    Press here to list listed users.");
+        System.out.println ("[7].    Press here to register a administrator.");
         System.out.println ("Search...");
     }
 }
