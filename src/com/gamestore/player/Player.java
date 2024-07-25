@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class Player extends User {
     private ArrayList<Player> friends;
 
-    public Player(String username, String email, ArrayList<Player> friends) {
+    public Player(String username, String email) {
         super(username, email);
         this.friends = new ArrayList<Player>();
     }
